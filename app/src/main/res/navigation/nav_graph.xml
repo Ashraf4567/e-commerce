@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.route.e_commerce.ui.tabs.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_cartFragment"
+            app:destination="@id/cartFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popUpTo="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.route.e_commerce.ui.tabs.categories.CategoryFragment"
+        android:label="CategoryFragment" />
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.route.e_commerce.ui.tabs.wishlist.WishlistFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_wishlist" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.route.e_commerce.ui.tabs.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/logInFragment"
+        android:name="com.route.e_commerce.ui.auth.login.LogInFragment"
+        android:label="fragment_log_in"
+        tools:layout="@layout/fragment_log_in" >
+        <action
+            android:id="@+id/action_logInFragment_to_SignupFragment"
+            app:destination="@id/SignupFragment"
+            app:popUpTo="@id/logInFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_out_right"
+            app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_logInFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SignupFragment"
+        android:name="com.route.e_commerce.ui.auth.signup.SignupFragment"
+        android:label="fragment_signUp"
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/action_SignupFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.route.e_commerce.ui.cart.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" />
+</navigation>
